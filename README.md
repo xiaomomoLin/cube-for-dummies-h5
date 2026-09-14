@@ -69,7 +69,7 @@ Simply double-click `index.html` and open it in Edge or Chrome.
 **No dependencies to install, no server required.** The solving process runs entirely locally in your browser. **Your cube data is never uploaded**, ensuring complete privacy.
 
 Please ensure the following files are in the same directory:
-`index.html`, `style.css`, `core.js`, `app.js`, `solver-source.js`.
+`index.html`, `style.css`, `i18n.js`, `core.js`, `app.js`, `solver-source.js`.
 *(Note: `min2phase.js` is the original solver source code, and `LICENSE-csTimer.txt` is the open-source license.)*
 
 ### 🎨 Inputting Colors
@@ -112,3 +112,8 @@ The solving algorithm uses the JavaScript `min2phase` (Two-Phase Algorithm) from
 - **Validation**: Every solve is replayed on an independent 54-sticker model to verify the solved state before displaying instructions.
 
 **Testing**: Verified 18 move types, 40 random scrambles (1000 moves each), corner tracking, Chinese JSON, invalid inputs, and UI bindings. *(Note: Automated browser testing for local `file://` protocols is restricted; real-browser UI automated acceptance testing was not performed.)*
+### 语言切换 / Language switch
+
+点击页面右上角 **English / 中文** 切换界面语言，选择会保存在当前浏览器。配色、当前步骤和所选角块会保留。英文模式用 W/R/G/Y/O/B 显示贴纸及输入框，仍兼容中文配色 JSON；文字步骤按当前语言导出。
+
+Use **English / 中文** in the top-right corner to switch languages. Your choice is saved in this browser. Colors, the current step and the selected corner are preserved. English mode uses W/R/G/Y/O/B on stickers and in color inputs, accepts Chinese color JSON, and exports step-by-step instructions in the selected language. Keep `i18n.js` alongside the other app files.

@@ -2,3 +2,17 @@
 @media(max-width:1050px){.input-layout{grid-template-columns:minmax(0,1fr) 245px;gap:16px}.face-cards{gap:10px}.face-card{padding:14px 10px}.cube-grid{width:132px}.orientation{font-size:10px}.guide-layout{grid-template-columns:minmax(0,1fr) 250px}.move-card{padding:22px}.big{width:153px}.comparison{gap:18px}}
 @media(max-width:860px){main{padding:25px 18px}.heading h1{font-size:27px}.hero-mark{display:none}.input-layout{grid-template-columns:1fr}.input-aside{display:grid;grid-template-columns:1fr 1fr}.input-aside>.card:first-child{grid-row:span 2}.face-cards{gap:14px}.cube-grid{width:150px}.orientation{font-size:11px}.guide-layout{grid-template-columns:1fr}.corner-card{display:grid;grid-template-columns:1fr 1fr;gap:0 25px}.corner-card .journey{grid-column:2;grid-row:1/span 5}.corner-card hr{display:none}.hold-banner{flex-wrap:wrap;gap:10px}.hold-note{display:none}.big{width:180px}}
 @media(max-width:560px){.topbar{height:62px;padding:0 18px}.brand-sub,.offline{display:none}.heading h1{font-size:24px}.subtitle{font-size:12px}.face-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.face-card{padding:14px 8px}.cube-grid{width:126px}.orientation{font-size:10px}.palette-panel{padding:15px}.palette{gap:10px}.paint{width:36px;height:36px}.input-aside{display:flex}.card{padding:20px}.hold-banner{padding:16px}.hold-banner h2{font-size:17px}.move-card{padding:18px}.move-title{font-size:23px}.move-detail{font-size:15px}.big{width:120px;gap:4px}.big .sticker{font-size:15px}.comparison{gap:10px}.comparison-arrow{font-size:20px}.step-actions{gap:7px}.step-actions button{font-size:11px;padding:11px 8px}.corner-card{display:block}.corner-card hr{display:block}.net-card .row{display:block}.net-card .small{font-size:10px}footer{display:block}footer span{display:block;margin:4px 0}}
+
+/* Language switch and longer English copy. */
+.topbar{gap:16px}.offline{margin-left:auto}#language-toggle{padding:6px 12px;white-space:nowrap;font-size:12px}
+html[lang="en"] .face-title{flex-wrap:wrap;gap:4px;font-size:12px}
+html[lang="en"] .face-id{font-size:10px}
+html[lang="en"] .brand-sub{display:none}
+html[lang="en"] .count{gap:3px;font-size:11px}
+html[lang="en"] .net-label{font-size:9px}
+html[lang="en"] .cube-net{grid-template-rows:repeat(3,140px)}
+html[lang="en"] .step-actions{flex-wrap:wrap}
+html[lang="en"] .hold-note{max-width:190px}
+@media(max-width:560px){html[lang="en"] .heading h1{font-size:23px}.topbar .brand{font-size:16px}html[lang="en"] .face-title{min-height:42px}html[lang="en"] .orientation{font-size:9px}.net-card .between{flex-wrap:wrap}}
+
+.primary span[data-i18n]{float:none}.corner-legend>span[data-i18n]{font-size:inherit;color:inherit;margin:0}
