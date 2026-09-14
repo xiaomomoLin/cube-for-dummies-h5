@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>一面一面 · 三阶魔方助手</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-icon">▦</span> 一面一面 <span class="brand-sub">CUBE STUDIO</span></a><span class="offline"><i></i> 本地计算 · 无需联网</span></header>
+<main>
+  <div class="heading"><div><p class="eyebrow">3 × 3 / 三阶魔方</p><h1>保持拿法，一步一步复原。</h1><p class="subtitle">填入你的配色，跟着固定视角操作，也可以观察一个角块的旅程。</p></div><span class="hero-mark">▦</span></div>
+  <nav class="tabs" aria-label="工作区"><button id="tab-input" class="tab active" aria-selected="true">01　录入配色</button><button id="tab-guide" class="tab" aria-selected="false">02　逐步复原 <span id="step-badge"></span></button></nav>
+  <section id="input-panel">
+    <div class="input-layout"><div>
+      <div class="palette-panel"><div><strong>选择画笔颜色</strong><span class="muted small">再点击九宫格填色，中心格也能修改</span></div><div id="palette" class="palette" role="group" aria-label="画笔颜色"></div></div>
+      <div id="faces" class="face-cards"></div>
+    </div><aside class="input-aside">
+      <div class="card"><p class="eyebrow">先把魔方拿好</p><h2>先看中心，再填颜色。</h2><p id="setup" class="setup"></p><ol class="tips"><li>先核对六个中心格，按实物修改。</li><li>照各卡片的颜色提示调整拿法，从左上到右下录入。</li><li>上方、左边等提示都指那一面的<strong>中心颜色</strong>。</li></ol><div class="notice">录入时只转整个魔方观察，不拧层。计算后再回到固定拿法。</div></div>
+      <div class="card"><div class="row between"><strong>颜色数量</strong><span class="muted small">每色 9 格</span></div><div id="counts" class="counts"></div></div>
+      <div class="card actions"><button id="solve" class="primary">计算复原步骤 <span>→</span></button><button id="cancel" class="danger" hidden>停止计算</button><button id="demo">试试演示打乱</button><div class="row"><button id="save">保存配色</button><button id="load">加载配色</button></div><button id="clear" class="text-button">清空色块，保留中心</button><input id="file-input" type="file" accept=".json,application/json" hidden></div>
+    </aside></div>
+  </section>
+  <section id="guide-panel" hidden>
+    <div id="empty-guide" class="empty card"><span>▦</span><h2>先给魔方一份配色。</h2><p>计算完成后，这里会显示每一步的拿法、转动和颜色变化。</p><button id="back-input" class="primary">去录入配色</button></div>
+    <div id="guide-content" hidden>
+      <div class="hold-banner"><div><span class="eyebrow">全程固定拿法</span><h2 id="hold"></h2></div><p id="hold-sides"></p><span class="hold-note">只拧层，不转整个魔方</span></div>
+      <div class="guide-layout"><article class="card move-card">
+        <div class="row between"><span id="progress-text" class="eyebrow"></span><span id="notation" class="notation"></span></div><div class="progress"><i id="progress-fill"></i></div>
+        <h2 id="move-title" class="move-title"></h2><p id="move-detail" class="move-detail"></p><p id="move-layer" class="muted"></p>
+        <div class="comparison"><div><p class="grid-label">操作前 · 固定正面</p><div id="before-grid" class="cube-grid big"></div></div><div class="comparison-arrow">→</div><div><p class="grid-label">操作后 · 固定正面</p><div id="after-grid" class="cube-grid big"></div></div></div>
+        <p id="move-note" class="notice"></p><div class="step-actions"><button id="prev">← 上一条（回看）</button><button id="next" class="primary">已拧完并核对一致 →</button></div><p class="small muted">“回看”只切换画面，不会撤销实物操作。不一致时先停下，必要时重新录入当前配色。</p>
+      </article><aside class="card corner-card"><p class="eyebrow">跟踪一个角块</p><h2>看看它去了哪里。</h2><label for="corner-select" class="muted small">按角块的三种颜色选择</label><select id="corner-select"></select><div class="corner-legend"><span>★</span> 标星的三个贴纸属于同一角块</div><dl class="journey"><dt>它的家</dt><dd id="corner-home"></dd><dt>本步移动</dt><dd id="corner-route"></dd><dt>操作后朝向</dt><dd id="corner-facing"></dd></dl><p id="corner-status" class="status-pill"></p><p class="small muted">角块去到后面时，正面可能看不到星标，可在下方展开图找它。</p><hr><p class="small muted">这是整体求解算法，不是逐角教学公式；已归位的块也可能暂时被移走。</p><button id="export">导出全部文字步骤</button></aside></div>
+      <div class="card net-card"><div class="row between"><div><p class="eyebrow">操作后的完整配色</p><h2>六个面，始终在同一个位置。</h2></div><span class="muted small">各面读图方向同录入时</span></div><div class="net-scroll"><div id="net" class="cube-net"></div></div></div>
+    </div>
+  </section>
+  <div id="status" class="status" role="status" aria-live="polite">先核对中心颜色，再填入其余 48 格。也可以载入演示试用。</div>
+  <footer><span>一面一面 / 固定视角魔方助手</span><span>求解引擎 <a href="https://github.com/cs0x7f/cstimer" target="_blank" rel="noreferrer">csTimer · min2phase</a> · <a href="LICENSE-csTimer.txt">GPL-3.0</a></span></footer>
+</main>
+<script src="core.js"></script><script src="solver-source.js"></script><script src="app.js"></script>
+</body></html>
