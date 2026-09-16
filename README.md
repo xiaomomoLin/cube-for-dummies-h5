@@ -44,10 +44,8 @@
 
 ### 💾 保存、导入和导出
 - **保存配色**：下载六面 JSON 文件。
-- **加载配色**：兼容原 Python 程序导出的 U/R/F/D/L/B 六个字符串，可输入中文或颜色字母。
 - **导出全部文字步骤**：包含固定拿法、每步操作、正面前后配色、角块观察和操作后的完整六面配色。
 
-*(原有 `cube_guide.py` 与其依赖不受影响，仍然可以使用。)*
 
 ### 📜 源码与许可
 页面和贴纸模型分别位于 `index.html`、`style.css`、`app.js`、`core.js`。
@@ -98,10 +96,9 @@ Select a 3-color corner piece, marked with **★** on its stickers. The sidebar 
 
 ### 💾 Save, Import, and Export
 - **Save**: Download the 6 faces as a JSON file.
-- **Load**: Compatible with U/R/F/D/L/B strings exported by the original Python script. Supports both English letters and Chinese characters.
+- **Load**: Compatible with U/R/F/D/L/B strings exported by the original thon script. Supports both English letters and Chinese characters.
 - **Export All Steps**: Exports a text file including fixed orientation, moves, front face before/after states, corner tracking, and full 6-face colors after each move.
 
-*(The original `cube_guide.py` and its dependencies remain unaffected and usable.)*
 
 ### 📜 Source Code & License
 UI and sticker models are in `index.html`, `style.css`, `app.js`, and `core.js`.
