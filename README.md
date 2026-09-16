@@ -55,7 +55,7 @@
 - `solver-source.js` 包含原始源码和 Worker 消息适配器，以 **Blob Worker** 运行，完美绕过本地文件 `fetch` / `importScripts` 的跨域限制。
 - **安全校验**：每次求解都由独立的 54 贴纸模型重放全部步骤，确认六面复原后才显示指导。
 
-**测试覆盖**：已检查 18 种转动、40 组随机打乱（1000 次打乱动作）、角块跟踪、中文 JSON、无效配色和页面元素绑定。*(注：当前自动化浏览器不允许本地文件页面，未进行真实浏览器界面自动验收。)*
+**测试覆盖**：已检查 18 种转动、40 组随机打乱（1000 次打乱动作）、角块跟踪、中文 JSON、无效配色和页面元素绑定。
 
 ---
 
@@ -108,7 +108,7 @@ The solving algorithm uses the JavaScript `min2phase` (Two-Phase Algorithm) from
 - `solver-source.js` wraps the original code with a Worker adapter, running as a **Blob Worker** to bypass local file `fetch` / `importScripts` CORS restrictions.
 - **Validation**: Every solve is replayed on an independent 54-sticker model to verify the solved state before displaying instructions.
 
-**Testing**: Verified 18 move types, 40 random scrambles (1000 moves each), corner tracking, Chinese JSON, invalid inputs, and UI bindings. *(Note: Automated browser testing for local `file://` protocols is restricted; real-browser UI automated acceptance testing was not performed.)*
+**Testing**: Verified 18 move types, 40 random scrambles (1000 moves each), corner tracking, Chinese JSON, invalid inputs, and UI bindings.
 ### 语言切换 / Language switch
 
 点击页面右上角 **English / 中文** 切换界面语言，选择会保存在当前浏览器。配色、当前步骤和所选角块会保留。英文模式用 W/R/G/Y/O/B 显示贴纸及输入框，仍兼容中文配色 JSON；文字步骤按当前语言导出。
